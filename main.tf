@@ -11,7 +11,7 @@ data "terraform_remote_state" "vpc_list"{
 }
 
 output "vpc"{
-  value = "${data.terraform_remote_state.vpc_list.app-vpc-eu-central-1.vpc_id}"
+  value = "${data.terraform_remote_state.vpc_list.outputs.admin-vpc-usw1.value}"
 }
 
 provider "aws"{
