@@ -15,14 +15,17 @@ output "vpc"{
 }
 
 provider "aws" {
+  skip_requesting_account_id = true
   alias = "usw2"
   region     = "us-west-2"
 }
 provider "aws" {
+  skip_requesting_account_id = true
   alias = "usw1"
   region = "us-west-1"
 }
 provider "aws" {
+  skip_requesting_account_id = true
 alias = "euc1"
 region = "eu-central-1"
 }
