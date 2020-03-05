@@ -38,7 +38,7 @@ region = "eu-central-1"
    vpc_id = data.terraform_remote_state.vpc_list.outputs.admin-vpc-usw2
  }
 
- module "usw1-bastion" {
+ module "euc1-bastion" {
    source = "./modules/bastion"
    provider_region = "eu-central-1"
    vpc_id = data.terraform_remote_state.vpc_list.outputs.admin-vpc-euc1
