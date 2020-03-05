@@ -5,8 +5,7 @@ variable "vpc_id"{
 default = ""
 }
 variable "public_subnet" {
-  type = list
-  default = [""]
+  default = ""
 }
 
 provider aws {
