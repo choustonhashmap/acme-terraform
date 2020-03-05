@@ -1,3 +1,19 @@
+data "terraform_remote_state" "vpc_list"{
+  backend = "remote"
+
+  config = {
+  hostname = "cdh-tfe.hashicorp.fun"
+  organization = "cdhouston"
+  workspaces = {
+    name = "acme-infra"
+  }
+}
+}
+
+output "vpc"{
+  value = "${data.terraform_remote_state.vpc_list.module.app-vpc-eu-central-1.vpc_id}"
+}
+
 provider "aws"{
   region = "us-west-1"
 }
@@ -12,15 +28,4 @@ provider "aws" {
 provider "aws" {
 alias = "euc1"
 region = "eu-central-1"
-}
-
-resource "aws_elastic_beanstalk_application" "tftest" {
-  name        = "tf-test-name"
-  description = "tf-test-desc"
-}
-
-resource "aws_elastic_beanstalk_environment" "tfenvtest" {
-  name                = "tf-test-name"
-  application         = "${aws_elastic_beanstalk_application.tftest.name}"
-  solution_stack_name = "apache"
 }
