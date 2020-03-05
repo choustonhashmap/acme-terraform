@@ -4,6 +4,10 @@ variable "provider_region" {
 variable "vpc_id"{
 default = ""
 }
+variable "subnet_id" {
+  default = ""
+}
+
 provider aws {
   alias  = "provider-1"
   region = var.provider_region

@@ -37,16 +37,19 @@ region = "eu-central-1"
    source = "./modules/bastion"
    provider_region = "us-west-1"
    vpc_id = data.terraform_remote_state.vpc_list.outputs.admin-vpc-usw1
+   public_subnet = data.terraform_remote_state.vpc_list.outputs.admin-public-subnet-usw1
  }
 
  module "usw2-bastion" {
    source = "./modules/bastion"
    provider_region = "us-west-2"
    vpc_id = data.terraform_remote_state.vpc_list.outputs.admin-vpc-usw2
+   public_subnet = data.terraform_remote_state.vpc_list.outputs.admin-public-subnet-usw2
  }
 
  module "euc1-bastion" {
    source = "./modules/bastion"
    provider_region = "eu-central-1"
    vpc_id = data.terraform_remote_state.vpc_list.outputs.admin-vpc-euc1
+   public_subnet = data.terraform_remote_state.vpc_list.outputs.admin-public-subnet-euc1
  }
