@@ -6,7 +6,7 @@ default = ""
 }
 variable "public_subnet" {
   type = list
-  default = ""
+  default = [""]
 }
 
 provider aws {
