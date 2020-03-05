@@ -28,10 +28,10 @@ region = "eu-central-1"
 }
 
 resource "aws_security_group" "allow_ssh" {
-  provider    = aws.usw1
+  provider    = aws.euc1
   name        = "bastion-us-west-1"
   description = "Allow SSH inbound traffic"
-  vpc_id      = data.terraform_remote_state.vpc_list.outputs.admin-vpc-usw1
+  vpc_id      = data.terraform_remote_state.vpc_list.outputs.admin-vpc-euc1
   ingress {
     # TLS (change to whatever ports you need)
     from_port   = 0
