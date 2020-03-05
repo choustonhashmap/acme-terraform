@@ -1,13 +1,3 @@
-variable "provider_region" {
-  default = "us-west-1"
-  }
-variable "vpc_id"{
-default = ""
-}
-variable "public_subnet" {
-  default = ""
-}
-
 provider aws {
   alias  = "provider-1"
   region = var.provider_region
