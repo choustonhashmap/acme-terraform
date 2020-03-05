@@ -1,3 +1,9 @@
+variable "provider_region" {
+  default = "us-west-1"
+  }
+variable "vpc_id"{
+default = ""
+}
 provider aws {
   alias  = "provider-1"
   region = var.provider_region
