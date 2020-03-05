@@ -4,7 +4,7 @@ variable "provider_region" {
 variable "vpc_id"{
 default = ""
 }
-variable "subnet_id" {
+variable "public_subnet" {
   default = ""
 }
 
