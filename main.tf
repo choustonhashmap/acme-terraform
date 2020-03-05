@@ -1,3 +1,10 @@
+variable "provider_region" {
+  default = "us-west-1"
+  }
+variable "vpc_id"{
+
+}
+
 data "terraform_remote_state" "vpc_list"{
   backend = "remote"
 
